@@ -1,0 +1,10 @@
+{
+    "name": "settle-challenge",
+    "version": "1.0.0",
+    "main": "server.js",
+    "dependencies": {
+      "hapi": "^20.1.5",
+      "mongoose": "^5.13.7"
+    }
+  }
+  
