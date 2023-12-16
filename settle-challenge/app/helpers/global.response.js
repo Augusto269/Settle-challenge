@@ -1,0 +1,23 @@
+const INTERNAL_SERVER_ERROR = 'Internal server error';
+const INTERNAL_SERVER_ERROR_CODE = 500;
+const BAD_REQUEST = 'Bad request';
+const BAD_REQUEST_CODE = 400;
+const NOT_FOUND = 'Not found';
+const NOT_FOUND_CODE = 404;
+const UNAUTHORIZED = 'Unauthorized';
+const UNAUTHORIZED_CODE = 401;
+const FORBIDDEN = 'Forbidden';
+const FORBIDDEN_CODE = 403;
+
+module.exports = {
+  INTERNAL_SERVER_ERROR,
+  INTERNAL_SERVER_ERROR_CODE,
+  BAD_REQUEST,
+  BAD_REQUEST_CODE,
+  NOT_FOUND,
+  NOT_FOUND_CODE,
+  UNAUTHORIZED,
+  UNAUTHORIZED_CODE,
+  FORBIDDEN,
+  FORBIDDEN_CODE,
+};
