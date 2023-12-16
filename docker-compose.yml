@@ -16,6 +16,8 @@ services:
     depends_on:
       - mongodb
     build: ./settle-challenge
+    volumes:
+      - ./settle-challenge:/settle-challenge
     restart: unless-stopped
     env_file: ./.env
     ports:

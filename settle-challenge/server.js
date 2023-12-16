@@ -20,7 +20,7 @@ const initServer = async () => {
     method: 'GET',
     path: '/',
     handler: (request, h) => {
-      return '¡Hey From the server';
+      return '¡Hey From the serveraaaaaaaa';
     },
   });
 
