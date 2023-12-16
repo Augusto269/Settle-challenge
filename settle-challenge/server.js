@@ -2,14 +2,16 @@
 
 const Hapi = require('@hapi/hapi');
 const mongoose = require('mongoose');
+const { url } = require('./app/configs/mongodb.const');
+const PORT = process.env.NODE_DOCKER_PORT || 8080;
 
 const initServer = async () => {
   const server = Hapi.server({
-    port: 3000,
+    port: PORT,
     host: '0.0.0.0',
   });
 
-  await mongoose.connect('mongodb://mongo:27017/settle', {
+  await mongoose.connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
