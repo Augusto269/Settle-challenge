@@ -35,6 +35,8 @@ Basic URL of the project (wo/modifications): `http://localhost:6868`
 
 Used the basicURL `18.191.36.38:6868`
 
+## Test:
+To run the test for the application put inside de settle-challenge folder and run `npm run test`
 
 ## Contact
 
