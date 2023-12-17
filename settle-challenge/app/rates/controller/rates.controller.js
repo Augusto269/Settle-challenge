@@ -7,9 +7,18 @@ const {
 } = require('../../helpers/global.response');
 const { calculateReserverFee } = require('../helpers/helpers.functions');
 const { postRatesValidation } = require('../controller/rates.validation');
-const { createRate } = require('../services/rates.services');
+const { createRate , getAllRates } = require('../services/rates.services');
 const getRates = async (request, h) => {
-  return 'Here the rates will be returned.';
+  try {
+    const getRates = await getAllRates();
+    return getRates;
+  } catch (error) {
+    const message = error.message || error?.details[0]?.message;
+    if (message) {
+      return h.response({ error: BAD_REQUEST, message: message }).code(BAD_REQUEST_CODE);
+    }
+    return h.response({ error: INTERNAL_SERVER_ERROR }).code(INTERNAL_SERVER_ERROR_CODE);
+  }
 };
 
 const postRates = async (request, h) => {

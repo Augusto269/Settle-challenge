@@ -6,6 +6,11 @@ const createRate = (ratesObject) => {
   return rate.save();
 };
 
+const getAllRates = (searchCondition) => {
+  return Rate.find({ ...searchCondition });
+};
+
 module.exports = {
   createRate,
+  getAllRates,
 };
