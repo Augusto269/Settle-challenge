@@ -31,6 +31,11 @@ To use Settle Challenge, follow these steps:
 To see Swagger documentation enter : `http://localhost:6868/documentation`
 Basic URL of the project (wo/modifications): `http://localhost:6868`
 
+## AWS instance :
+
+Used the basicURL `18.191.36.38:6868`
+
+
 ## Contact
 
 If you want to contact me you can reach me at `<augustog5896@gmail.com>`.
