@@ -1,5 +1,4 @@
 'use strict';
-
 const Hapi = require('@hapi/hapi');
 const mongoose = require('mongoose');
 const { url } = require('./app/configs/mongodb.const');
@@ -20,7 +19,7 @@ const initServer = async () => {
 
   ratesRoutes(server);
   healthCheckRoutes(server);
-  convertRoutes(server)
+  convertRoutes(server);
 
   await server.start();
   console.log('Server Hapi-Settle Working on:', server.info.uri);

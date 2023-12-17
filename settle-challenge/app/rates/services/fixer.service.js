@@ -16,7 +16,7 @@ const fixerGetRates = async (baseCurrency, symbols) => {
       if (data.success === false) throw new Error(data.error.type);
       return { ...data, reverse: true };
     }
-    throw new Error(data.error.type);
+    throw new Error(data.error.type || 'Unknown error');
   }
   return { ...data, reverse: false };
 };
