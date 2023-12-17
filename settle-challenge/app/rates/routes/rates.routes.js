@@ -15,6 +15,7 @@ const ratesRoutes = (server) => {
           Joi.object({
             id: Joi.string(),
             pair: Joi.string(),
+            feeAmount: Joi.number(),
             originalRate: Joi.number(),
             feePercentage: Joi.number(),
             rateWithMarkup: Joi.number(),
@@ -42,6 +43,7 @@ const ratesRoutes = (server) => {
         schema: Joi.object({
           id: Joi.string(),
           pair: Joi.string(),
+          feeAmount: Joi.number(),
           originalRate: Joi.number(),
           feePercentage: Joi.number(),
           rateWithMarkup: Joi.number(),

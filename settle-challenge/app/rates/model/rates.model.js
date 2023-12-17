@@ -6,6 +6,7 @@ const rateSchema = new mongoose.Schema({
   rate: Number,
   feeAmount: Number,
   rateWithMarkup: Number,
+  feePercentage: Number,
   createAt: { type: Date, default: Date.now },
   updateAt: { type: Date, default: Date.now },
 });
