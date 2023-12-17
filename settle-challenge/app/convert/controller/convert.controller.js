@@ -35,7 +35,6 @@ const postConvertAmount = async (request, h) => {
 const getAllConvertAmounts = async (request, h) => {
     try {
       const getRates = await getAllConvertedAmount();
-      console.log(getRates)
       return getRates.map((rate) => convertedAmountSendMerchantMapping(rate));
     } catch (error) {
       const message = error.message || error?.details[0]?.message;
