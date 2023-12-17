@@ -3,7 +3,8 @@ const ratesSendMapping = (rate) => {
     id: rate._id.toString(),
     pair: rate.pair,
     originalRate: rate.originalRate,
-    feePercentage: rate.feeAmount,
+    feeAmount: rate.feeAmount,
+    feePercentage: rate.feePercentage,
     rateWithMarkup: rate.rateWithMarkup,
   };
 };
