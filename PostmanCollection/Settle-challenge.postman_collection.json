@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "05b5ccaf-c13e-4692-a617-3346844afebe",
+		"name": "Settle-challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Rates",
+			"item": [
+				{
+					"name": "Set rates",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pair\": \"EURARS\",\n    \"feePercentage\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basicUrl}}/rates",
+							"host": [
+								"{{basicUrl}}"
+							],
+							"path": [
+								"rates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get rates",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basicUrl}}/rates",
+							"host": [
+								"{{basicUrl}}"
+							],
+							"path": [
+								"rates"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Convert",
+			"item": [
+				{
+					"name": "Convert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pair\": \"EURUSD\",\n    \"amount\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basicUrl}}/convert",
+							"host": [
+								"{{basicUrl}}"
+							],
+							"path": [
+								"convert"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Convert Amounts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pair\": \"EURUSD\",\n    \"amount\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basicUrl}}/convert",
+							"host": [
+								"{{basicUrl}}"
+							],
+							"path": [
+								"convert"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "heathCheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{basicUrl}}/healthcheck",
+					"host": [
+						"{{basicUrl}}"
+					],
+					"path": [
+						"healthcheck"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
