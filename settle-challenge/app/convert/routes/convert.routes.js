@@ -37,12 +37,11 @@ const convertRoutes = (server) => {
       response: {
         schema: Joi.array().items(
           Joi.object({
-            _id: Joi.string(),
+            id: Joi.string(),
             pair: Joi.string(),
             originalAmount: Joi.number(),
             convertedAmount: Joi.number(),
-            createAt: Joi.string(),
-            updateAt: Joi.string(),
+            createAt: Joi.date(),
           })
         ),
       },

@@ -8,11 +8,12 @@ const {
 const { calculateReserverFee } = require('../helpers/helpers.functions');
 const { postRatesValidation } = require('../controller/rates.validation');
 const { createRate, getAllRates } = require('../services/rates.services');
+const { ratesSendMapping } = require('../helpers/mappings');
 
 const getRates = async (request, h) => {
   try {
     const getRates = await getAllRates();
-    return getRates;
+    return getRates.map((rate) => ratesSendMapping(rate));
   } catch (error) {
     const message = error.message || error?.details[0]?.message;
     if (message) {
@@ -40,7 +41,8 @@ const postRates = async (request, h) => {
     }
     const feeAmount = (originalRate * feePercentage) / 100;
     const rateWithMarkup = originalRate + feeAmount;
-    return await createRate({ pair, originalRate, feePercentage, feeAmount, rateWithMarkup });
+    const rate = await createRate({ pair, originalRate, feePercentage, feeAmount, rateWithMarkup })
+    return ratesSendMapping(rate);
   } catch (error) {
     const message = error.message || error?.details[0]?.message;
     if (message) {

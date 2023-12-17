@@ -1,5 +1,6 @@
 const { getRates, postRates } = require('../controller/rates.controller');
 const Joi = require('joi');
+
 const ratesRoutes = (server) => {
   server.route({
     method: 'GET',
@@ -12,16 +13,14 @@ const ratesRoutes = (server) => {
       response: {
         schema: Joi.array().items(
           Joi.object({
-            _id: Joi.string(),
+            id: Joi.string(),
             pair: Joi.string(),
             originalRate: Joi.number(),
             feePercentage: Joi.number(),
-            createAt: Joi.string(),
-            updateAt: Joi.string(),
+            rateWithMarkup: Joi.number(),
           })
         ),
       },
-      
     },
   });
 
@@ -36,18 +35,16 @@ const ratesRoutes = (server) => {
       validate: {
         payload: Joi.object({
           pair: Joi.string().required(),
-          originalRate: Joi.number().required(),
           feePercentage: Joi.number().required(),
         }),
       },
       response: {
         schema: Joi.object({
-          _id: Joi.string(),
+          id: Joi.string(),
           pair: Joi.string(),
           originalRate: Joi.number(),
           feePercentage: Joi.number(),
-          createAt: Joi.string(),
-          updateAt: Joi.string(),
+          rateWithMarkup: Joi.number(),
         }),
       },
     },

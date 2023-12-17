@@ -8,23 +8,8 @@ const { postConvertValidation } = require('../controller/convert.validation');
 const { getRate } = require('../../rates/services/rates.services');
 const { convertRaidAmount } = require('../services/convert.function');
 const { getAllConvertedAmount } = require('../services/convert.services');
+const {convertedAmountSendMerchantMapping} = require('../helpers/mapping');
 
-/**
- * @typedef {Object} ConvertResponse
- * @property {number} convertedAmount - The converted amount.
- */
-
-/**
- * Handles the conversion of an amount based on the provided request payload.
- *
- * @param {Object} request - The Hapi request object.
- * @param {Object} h - The Hapi response toolkit.
- * @returns {ConvertResponse} - The converted amount.
- *
- * @throws {Object} - An error response.
- * @throws {string} - Pair or id is required.
- * @throws {string} - Rate not found.
- */
 const postConvertAmount = async (request, h) => {
   try {
     const validateBody = postConvertValidation.validate(request.payload);
@@ -50,7 +35,8 @@ const postConvertAmount = async (request, h) => {
 const getAllConvertAmounts = async (request, h) => {
     try {
       const getRates = await getAllConvertedAmount();
-      return getRates;
+      console.log(getRates)
+      return getRates.map((rate) => convertedAmountSendMerchantMapping(rate));
     } catch (error) {
       const message = error.message || error?.details[0]?.message;
       if (message) {
