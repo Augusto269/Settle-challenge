@@ -19,7 +19,7 @@ const postConvertAmount = async (request, h) => {
     const { pair, id, amount } = validateBody.value;
     if (!id && !pair) throw new Error('pair or id is required');
     let query = {};
-    if (id) query.id = id;
+    if (id) query._id = id;
     else query.pair = pair;
     const convertRaid = await getRate(query);
     if (!convertRaid) throw new Error('Rate not found');
