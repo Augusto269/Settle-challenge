@@ -7,7 +7,8 @@ const {
 } = require('../../helpers/global.response');
 const { calculateReserverFee } = require('../helpers/helpers.functions');
 const { postRatesValidation } = require('../controller/rates.validation');
-const { createRate , getAllRates } = require('../services/rates.services');
+const { createRate, getAllRates } = require('../services/rates.services');
+
 const getRates = async (request, h) => {
   try {
     const getRates = await getAllRates();

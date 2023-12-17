@@ -1,13 +1,13 @@
 # Settle Challenge
 
-This is a project created for the Settle Challenge interview. It's a Node.js application with Hapi.js
+This project was created for the Settle Challenge interview. It is a Node.js application built with Hapi.js.
 
 ## Prerequisites
 
-Before you begin, ensure you have met the following requirements:
+Before you begin, make sure you have met the following requirements:
 
-* You have installed the latest version of Node.js and Docker
-* You have a `<Windows/Linux/Mac>` machine. State if OS matters.
+* You have installed the latest version of Node.js and Docker.
+* You have a `<Windows/Linux/Mac>` machine. Specify if the operating system matters.
 
 ## Installing Settle Challenge
 
@@ -20,9 +20,16 @@ To install Settle Challenge, follow these steps:
 ## Using Settle Challenge
 
 To use Settle Challenge, follow these steps:
-1. Copy the `.env.example` to a new file `.env`
-2. Build the Docker image: `docker-compose build`
-3. Run the Docker container: `docker-compose up`
+
+1. Copy the `.env.example` file and rename it to `.env`.
+2. Build the Docker image: `docker-compose build`.
+3. Run the Docker container: `docker-compose up`.
+
+
+## Basic information about configuration
+
+To see Swagger documentation enter : `http://localhost:6868/documentation`
+Basic URL of the project (wo/modifications): `http://localhost:6868`
 
 ## Contact
 
