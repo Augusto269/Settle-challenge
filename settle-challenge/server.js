@@ -6,6 +6,7 @@ const { url } = require('./app/configs/mongodb.const');
 const PORT = process.env.NODE_DOCKER_PORT || 8080;
 const ratesRoutes = require('./app/rates/routes/rates.routes');
 const healthCheckRoutes = require('./app/health-check/routes/health-check.routes');
+const convertRoutes = require('./app/convert/routes/convert.routes');
 const initServer = async () => {
   const server = Hapi.server({
     port: PORT,
@@ -19,6 +20,7 @@ const initServer = async () => {
 
   ratesRoutes(server);
   healthCheckRoutes(server);
+  convertRoutes(server)
 
   await server.start();
   console.log('Server Hapi-Settle Working on:', server.info.uri);

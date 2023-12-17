@@ -1,10 +1,14 @@
 const Rate = require('../model/rates.model');
 
 const createRate = (ratesObject) => {
-  //The idea is to create a new rate in the database. sending a object with X values and return the new rate created mapping only de correct values
   const rate = new Rate(ratesObject);
   return rate.save();
 };
+
+const getRate = async (searchCondition) => {
+    const sortOptions = { createdAt: -1 }; // Last created
+    return Rate.findOne({ ...searchCondition }).sort(sortOptions);
+    }
 
 const getAllRates = (searchCondition) => {
   return Rate.find({ ...searchCondition });
@@ -13,4 +17,5 @@ const getAllRates = (searchCondition) => {
 module.exports = {
   createRate,
   getAllRates,
+  getRate,
 };
